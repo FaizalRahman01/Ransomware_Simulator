@@ -134,9 +134,7 @@ To turn the script into an .exe named **CapCut.exe**:
 ### Important Notes
 
 This script does not include a decryptor.
-
 Encrypted files cannot be opened without the key.
-
 IV is stored inside the encrypted file itself (at the beginning).
 
 
