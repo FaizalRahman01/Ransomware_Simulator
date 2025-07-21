@@ -29,3 +29,6 @@ The project showcases **real-world ransomware functionalities**, including **tar
 ## **Disclaimer**
 
 This simulator is intended strictly for **ethical**, **educational**, and **cybersecurity awareness** purposes, helping **learners**, **researchers**, and **professionals** understand how ransomware operates **without causing real harm**.
+
+# **Architecture Diagram**
+## **Windows Ransomware Architecture Diagram**
