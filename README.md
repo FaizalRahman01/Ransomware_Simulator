@@ -72,5 +72,23 @@ A 256-bit encryption key is generated using SHA-256 from the given password:
 def get_aes_key(password):
     hasher = SHA256.new(password.encode())
     return hasher.digest()
+This ensures consistent and strong encryption.
+
+---
+
+### **Step 3: Encrypt File Content**
+
+For each file:
+- The file is read.
+- Data is padded to fit AES block size.
+- A random IV is generated.
+- Data is encrypted using AES in CBC mode.
+- The IV is added to the beginning of the encrypted file.
+
+```python
+iv = Random.new().read(AES.block_size)
+cipher = AES.new(key, AES.MODE_CBC, iv)
+encrypted_data = iv + cipher.encrypt(padded_data)
+The encrypted file is saved as:
 
 
