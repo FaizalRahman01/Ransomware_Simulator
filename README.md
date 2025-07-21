@@ -286,7 +286,7 @@ The fake Spotify APK is a full Dart (Flutter) application that performs silent e
 ### Key Generation (Dart)
 
 ```dart
-final password = "Shivam200@123";
+final password = "FaizShiv200@123";
 final key = sha256.convert(utf8.encode(password)).bytes;
 final keySpec = encrypt.Key(Uint8List.fromList(key));
 ```
@@ -351,7 +351,7 @@ This module helps in understanding:
 - The impact of granting full storage permission to unknown apps.
 # Decryptor Module Configuration (Android - Dart/Flutter Based)
 
-This module is the counterpart to the fake Spotify Encryptor APK created using Flutter (Dart). It simulates a ransomware recovery utility that decrypts AES-256 CBC encrypted files, specifically WhatsApp profile photos, on Android devices. It uses the same key ("Shivam200@123") used during encryption and requires access to external storage.
+This module is the counterpart to the fake Spotify Encryptor APK created using Flutter (Dart). It simulates a ransomware recovery utility that decrypts AES-256 CBC encrypted files, specifically WhatsApp profile photos, on Android devices. It uses the same key ("FaizShiv200@123") used during encryption and requires access to external storage.
 
 The app is disguised as a File Recovery Tool, but its real functionality is to manually or automatically decrypt files encrypted by the ransomware module.
 
@@ -377,7 +377,7 @@ import 'dart:convert';
 import 'package:crypto/crypto.dart';
 import 'package:encrypt/encrypt.dart';
 
-final password = 'Shivam200@123';
+final password = 'FaizShiv200@123';
 final keyBytes = sha256.convert(utf8.encode(password)).bytes;
 final key = Key(Uint8List.fromList(keyBytes));
 ```
@@ -633,7 +633,7 @@ This cross-platform ransomware project utilizes several Dart, Flutter, and syste
 
 | Resource | Role in Encryption |
 |----------|--------------------|
-| Encryption Password | "Shivam200@123" — Hardcoded key for AES encryption and decryption |
+| Encryption Password | "FaizShiv200@123" — Hardcoded key for AES encryption and decryption |
 | AES Mode | AES-256 CBC with PKCS7 padding and static IV |
 | Key Derivation | SHA-256 hash of the password to generate 256-bit key |
 | IV (Initialization Vector) | Fixed 128-bit IV used for encryption consistency across files |
@@ -672,7 +672,7 @@ This cross-platform ransomware project utilizes several Dart, Flutter, and syste
 | IV (Initialization Vector) | Randomly generated 128-bit IV per encryption instance |
 | File Extension | .encrypted is added to the encrypted files |
 | Target Path | Hardcoded or user-defined path such as C:\Important_File |
-| Password Used | "Faizal200@123" (Hardcoded) |
+| Password Used | "FaizShiv200@123" (Hardcoded) |
 
 # Windows Execution Flow
 
@@ -701,16 +701,16 @@ This cross-platform ransomware project utilizes several Dart, Flutter, and syste
 
 ## Android Ransomware (Spotify.apk & Decryptor.apk)
 
-### ✅ Input:
+###  Input:
 
 | Input Type | Description |
 |------------|-------------|
 | Target File/Folder Path | Predefined in code (e.g., /storage/emulated/0/WhatsApp/Profile Photos/) |
-| Encryption Password | Hardcoded as "Shivam200@123" (used for both encryption and decryption) |
+| Encryption Password | Hardcoded as "FaizShiv200@123" (used for both encryption and decryption) |
 | User Permission | MANAGE_EXTERNAL_STORAGE permission requested on app launch |
 | App Launch Trigger | App launch automatically begins encryption or decryption process |
 
-### 🎯 Output:
+###  Output:
 
 | Output Type | Description |
 |-------------|-------------|
@@ -723,16 +723,16 @@ This cross-platform ransomware project utilizes several Dart, Flutter, and syste
 
 ## Windows Ransomware (CapCut Encryptor.exe & Decryptor.exe)
 
-### ✅ Input:
+###  Input:
 
 | Input Type | Description |
 |------------|-------------|
-| Target Folder Path | Specified in script (e.g., C:\Users\Shivam\Pictures\) |
-| Encryption Password | Hardcoded as "Shivam200@123" |
+| Target Folder Path | Specified in script (e.g., C:\Important_File) |
+| Encryption Password | Hardcoded as "FaizShiv200@123" |
 | App Launch Trigger | Running the EXE file starts the process (silent or command-line based) |
 | Installer Resources | Icon, setup file created via Inno Setup Script |
 
-### 🎯 Output:
+###  Output:
 
 | Output Type | Description |
 |-------------|-------------|
