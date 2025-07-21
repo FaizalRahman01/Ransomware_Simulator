@@ -239,9 +239,9 @@ To make it executable on Windows without needing Python installed:
 
 ```bash
 pyinstaller --onefile --noconsole decoder.py
+```
 - `--onefile` → Creates a single portable `.exe` file.
 - `--noconsole` → Prevents showing a command prompt window during execution.
-```
 The final executable:
 
 `decoder.exe` (Disguised as CapCut app)
