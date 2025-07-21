@@ -39,8 +39,7 @@ This simulator is intended strictly for **ethical**, **educational**, and **cybe
 ![Android Ransomware(Decryptor) Architecture Diagram](./apk%20files%20%20AND%20exe%20Files/Decr_Arch.jpg)
 # **CapCut.exe (Windows File Encryptor)**
 
-This component is a **Python-based ransomware encryptor disguised as CapCut.exe**. It is designed for educational use to demonstrate how ransomware encrypts files using **AES-256 encryption**.  
-The program encrypts files in a specified folder or a specific file and deletes the original version.
+This component is a Python-based ransomware encryptor disguised as CapCut.exe. It is designed for educational use to demonstrate how ransomware encrypts files using AES-256 encryption. The program encrypts files in a specified folder or a specific file and deletes the original version.
 
 ---
 
@@ -60,7 +59,18 @@ The program encrypts files in a specified folder or a specific file and deletes 
 
 ## **How It Works – Step-by-Step**
 
-### ✅ **Step 1: Define Target Path**
+### **Step 1: Define Target Path**
+
 ```python
 file_to_encrypt = r"C:\Important_File"  # File or Folder path
+
+### **Step 2: Generate AES-256 Key**
+
+A 256-bit encryption key is generated using SHA-256 from the given password:
+
+```python
+def get_aes_key(password):
+    hasher = SHA256.new(password.encode())
+    return hasher.digest()
+
 
