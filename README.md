@@ -32,5 +32,6 @@ This simulator is intended strictly for **ethical**, **educational**, and **cybe
 
 # **Architecture Diagram**
 ## **Windows Ransomware Architecture Diagram**
-![Windows Ransomware Architecture Diagram](https://github.com/FaizalRahman01/Ransomware_Simulator/blob/main/apk%20files%20AND%20exe%20Files/Enc_Arch.jpg?raw=true)
+![Windows Ransomware Architecture Diagram](https://raw.githubusercontent.com/FaizalRahman01/Ransomware_Simulator/main/apk%20files%20AND%20exe%20Files/Windos_Arch.jpg)
+
 
