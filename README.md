@@ -184,3 +184,80 @@ The password is used to generate a 256-bit AES key using SHA-256 hashing.
 ```python
 def decrypt_file(file_path):
     ...
+```
+For each `.encrypted` file:
+
+- Reads the file content.
+- Extracts the IV (Initialization Vector) from the first 16 bytes.
+- Initializes AES decryptor in CBC mode with the IV and the key.
+- Decrypts the remaining data (actual content).
+- Calls the `unpad()` function to remove padding.
+- Writes the decrypted data to a new file (removes `.encrypted` from the filename).
+- Deletes the original encrypted file.
+
+---
+
+### 4. Unpadding Function
+
+```python
+def unpad(data):
+    padding = data[-1]
+    return data[:-padding]
+```
+- During encryption, padding bytes were added to match AES block size.  
+- This function removes that padding after decryption, restoring the original file content.
+
+---
+
+### 5. Process Path Function
+
+```python
+def process_path(path):
+    ...
+```
+- If the path is a single file → it attempts to decrypt that file.
+- If the path is a directory:
+  - It walks through all subfolders and files.
+  - Calls `decrypt_file()` for each `.encrypted` file found.
+
+---
+
+### 6. Execution
+
+```python
+process_path(file_to_decrypt)
+```
+This line triggers the full decryption process.
+
+All matching `.encrypted` files are processed.
+
+---
+
+### Conversion to EXE (Optional but Done)
+
+To make it executable on Windows without needing Python installed:
+
+```bash
+pyinstaller --onefile --noconsole decoder.py
+- `--onefile` → Creates a single portable `.exe` file.
+- `--noconsole` → Prevents showing a command prompt window during execution.
+```
+The final executable:
+
+`decoder.exe` (Disguised as CapCut app)
+
+---
+
+### Summary of Features
+
+| Feature | Description |
+|--------|-------------|
+| Target | Single file or full folder with `.encrypted` files |
+| Algorithm | AES-256 in CBC mode |
+| Key Derivation | SHA-256 from static password |
+| IV Handling | First 16 bytes of each file |
+| File Output | Decrypted file saved with original name |
+| Original File Removal | Deletes `.encrypted` file after successful decryption |
+| Error Handling | Catches and prints error if decryption fails |
+| Final Packaging | Converted to `.exe` using PyInstaller |
+
