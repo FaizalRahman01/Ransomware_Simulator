@@ -615,3 +615,84 @@ This cross-platform ransomware project utilizes several Dart, Flutter, and syste
 | /decryptor_exe/ | Decryptor executable file for Windows that restores encrypted data |
 | /assets/ | Contains static files like icons, dummy images, and UI assets |
 | /utils/ | Utility functions such as key generation, file scanning, and logging |
+# Resources
+# App-Level Resources (Assets and Configuration)
+
+## Resource Overview
+
+| Resource | Description |
+|----------|-------------|
+| pubspec.yaml | Defines project dependencies, assets, and icon configuration |
+| AndroidManifest.xml | Declares permissions such as MANAGE_EXTERNAL_STORAGE |
+| Info.plist (for iOS builds) | (Optional) Placeholder for platform compatibility |
+| inno_setup_script.iss | Script used to generate Windows .exe installer with custom icon |
+| main.dart | Entry point for Flutter applications (both encryptor and decryptor) |
+| launcher_icon.png | Custom launcher icon (Spotify/CapCut), configured using flutter_launcher_icons |
+
+## Encryption-Specific Resources
+
+| Resource | Role in Encryption |
+|----------|--------------------|
+| Encryption Password | "Shivam200@123" — Hardcoded key for AES encryption and decryption |
+| AES Mode | AES-256 CBC with PKCS7 padding and static IV |
+| Key Derivation | SHA-256 hash of the password to generate 256-bit key |
+| IV (Initialization Vector) | Fixed 128-bit IV used for encryption consistency across files |
+| Base64 Encoding | Converts encrypted binary data to storable strings |
+
+## Android Permissions Used
+
+| Permission | Purpose |
+|------------|---------|
+| MANAGE_EXTERNAL_STORAGE | Allows access to all external files for encryption and decryption |
+| READ_EXTERNAL_STORAGE (Optional) | Backward compatibility for older Android versions |
+| INTERNET (Optional) | If logging or reporting is integrated (not included in current build) |
+
+# App-Level Resources (Executable Build System & File Structure)
+
+| Resource | Description |
+|----------|-------------|
+| encryptor.py | Python script to encrypt targeted files or folders using AES-256 (CBC mode). |
+| decryptor.py | Python script to decrypt .encrypted files back to original state. |
+| pyinstaller | Used to convert Python scripts into standalone .exe executables. |
+| CapCut.ico | Custom icon used to disguise the executable as the CapCut video editor. |
+| CapCut_Encryptor.exe | Final output of encryptor.py, disguised as CapCut app (installer/executable). |
+| CapCut_Decryptor.exe | Decryption executable built from decryptor.py. |
+| config.spec | PyInstaller specification file for advanced build options (icon, paths, etc.). |
+| README.txt | Instructions for using the encryptor and decryptor. |
+| ransom_note.txt (optional) | Optional text file displayed to user after encryption. |
+| Google Drive (ZIP folder) | Final package sent to victim — includes EXE with disguise and instructions. |
+
+# Encryption-Specific Configuration
+
+| Configuration Element | Details |
+|-----------------------|---------|
+| Encryption Algorithm | AES-256 in CBC (Cipher Block Chaining) mode |
+| Key Derivation Function | SHA-256 hashing of user-defined password to generate 256-bit encryption key |
+| Padding Scheme | PKCS7 padding for byte alignment |
+| IV (Initialization Vector) | Randomly generated 128-bit IV per encryption instance |
+| File Extension | .encrypted is added to the encrypted files |
+| Target Path | Hardcoded or user-defined path such as C:\Important_File |
+| Password Used | "Faizal200@123" (Hardcoded) |
+
+# Windows Execution Flow
+
+**Encryption:**
+
+- `encryptor.py` is compiled into `CapCut_Encryptor.exe` using PyInstaller.
+- When run, it encrypts all files under a specified directory (recursively).
+- Original files are deleted after encryption to avoid recovery.
+
+**Decryption:**
+
+- `decryptor.py` is compiled into `CapCut_Decryptor.exe`.
+- It scans for `.encrypted` files in the specified folder.
+- Decrypts and restores the original content using the same password and AES configuration.
+
+# Packaging & Delivery
+
+| Step | Action |
+|------|--------|
+| 1 | Both EXE files are compiled and renamed to resemble legitimate software. |
+| 2 | Files are zipped together (optional: with fake README or license). |
+| 3 | ZIP is uploaded to Google Drive or any delivery medium. |
+| 4 | Victim downloads and executes assuming it is CapCut or another safe app. |
