@@ -132,9 +132,55 @@ To turn the script into an .exe named **CapCut.exe**:
 - Shows how files can be programmatically locked and disguised.
 - Useful for learning cybersecurity defense techniques.
 ### Important Notes
-
 This script does not include a decryptor.
 Encrypted files cannot be opened without the key.
 IV is stored inside the encrypted file itself (at the beginning).
 
+### CapCut Decryptor for Windows — Detailed English Explanation
 
+### Overview
+
+This Python script is used to decrypt files or folders that were previously encrypted using AES-256-CBC encryption (from the CapCut encryptor). The decryption is based on a static password and a proper unpadding mechanism. Later, this script was converted to an executable (decoder.exe) using PyInstaller so that it can be used easily on Windows systems without requiring Python to be installed.
+
+### Tools & Technologies Used
+
+- Python
+- PyCryptodome (for AES encryption/decryption)
+- PyInstaller (to convert Python script to .exe)
+- AES-256 CBC (encryption mode)
+- SHA-256 (to generate a secure 256-bit key from the password)
+
+### How It Works (Step-by-Step)
+
+#### 1. Target Selection
+```python
+file_to_decrypt = r"C:\Important_File"
+```
+This is the path to the file or folder you want to decrypt.
+
+- It can be a single file or a full folder.
+- The script will only process files that have a `.encrypted` extension.
+
+---
+
+### 2. Password & Key Generation
+
+```python
+password = "FaizShiv200@123"
+
+def get_aes_key(password):
+    hasher = SHA256.new(password.encode())
+    return hasher.digest()
+```
+The password is used to generate a 256-bit AES key using SHA-256 hashing.
+
+- This key must match the one used during encryption.
+- The key is used to initialize the AES decryptor.
+
+---
+
+### 3. File Decryption Function
+
+```python
+def decrypt_file(file_path):
+    ...
