@@ -91,4 +91,20 @@ cipher = AES.new(key, AES.MODE_CBC, iv)
 encrypted_data = iv + cipher.encrypt(padded_data)
 The encrypted file is saved as:
 ```
+The encrypted file is saved as:
+### ✅ Step 4: Handle Files and Folders
+
+The program checks if the given path is a file or folder:
+
+- If it's a file ➜ encrypt it.
+- If it's a folder ➜ loop through all files inside and encrypt each.
+
+```python
+if os.path.isfile(path):
+    encrypt_file(path)
+elif os.path.isdir(path):
+    for root, dirs, files in os.walk(path):
+        ...
+```
+
 
