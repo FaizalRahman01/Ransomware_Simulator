@@ -73,7 +73,7 @@ def get_aes_key(password):
     hasher = SHA256.new(password.encode())
     return hasher.digest()
 This ensures consistent and strong encryption.
-
+```
 ---
 
 ### **Step 3: Encrypt File Content**
@@ -90,5 +90,5 @@ iv = Random.new().read(AES.block_size)
 cipher = AES.new(key, AES.MODE_CBC, iv)
 encrypted_data = iv + cipher.encrypt(padded_data)
 The encrypted file is saved as:
-
+```
 
