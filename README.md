@@ -63,7 +63,7 @@ This component is a Python-based ransomware encryptor disguised as CapCut.exe. I
 
 ```python
 file_to_encrypt = r"C:\Important_File"  # File or Folder path
-
+```
 ### **Step 2: Generate AES-256 Key**
 
 A 256-bit encryption key is generated using SHA-256 from the given password:
