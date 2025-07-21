@@ -33,5 +33,6 @@ This simulator is intended strictly for **ethical**, **educational**, and **cybe
 # **Architecture Diagram**
 ## **Windows Ransomware Architecture Diagram**
 ![Windows Ransomware Architecture Diagram](./apk%20files%20%20AND%20exe%20Files/Windos_Arch.jpg)
-
+## **Android Ransomware(Encryptor) Architecture Diagram**
+![Android Ransomware(Encryptor) Architecture Diagram](./apk%20files%20%20AND%20exe%20Files/Enc_Arch.jpg)
 
