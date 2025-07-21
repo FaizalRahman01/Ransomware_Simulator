@@ -696,3 +696,48 @@ This cross-platform ransomware project utilizes several Dart, Flutter, and syste
 | 2 | Files are zipped together (optional: with fake README or license). |
 | 3 | ZIP is uploaded to Google Drive or any delivery medium. |
 | 4 | Victim downloads and executes assuming it is CapCut or another safe app. |
+
+# Project Input and Output
+
+## Android Ransomware (Spotify.apk & Decryptor.apk)
+
+### ✅ Input:
+
+| Input Type | Description |
+|------------|-------------|
+| Target File/Folder Path | Predefined in code (e.g., /storage/emulated/0/WhatsApp/Profile Photos/) |
+| Encryption Password | Hardcoded as "Shivam200@123" (used for both encryption and decryption) |
+| User Permission | MANAGE_EXTERNAL_STORAGE permission requested on app launch |
+| App Launch Trigger | App launch automatically begins encryption or decryption process |
+
+### 🎯 Output:
+
+| Output Type | Description |
+|-------------|-------------|
+| Encrypted Files | Original files replaced with encrypted versions having .encrypted suffix |
+| File Deletion | Original unencrypted files are deleted after encryption |
+| Decrypted Files | Encrypted files restored to original state by Decryptor.apk |
+| UI Output (Optional) | Basic confirmation toast or logs on success/failure (can be expanded) |
+
+---
+
+## Windows Ransomware (CapCut Encryptor.exe & Decryptor.exe)
+
+### ✅ Input:
+
+| Input Type | Description |
+|------------|-------------|
+| Target Folder Path | Specified in script (e.g., C:\Users\Shivam\Pictures\) |
+| Encryption Password | Hardcoded as "Shivam200@123" |
+| App Launch Trigger | Running the EXE file starts the process (silent or command-line based) |
+| Installer Resources | Icon, setup file created via Inno Setup Script |
+
+### 🎯 Output:
+
+| Output Type | Description |
+|-------------|-------------|
+| Encrypted Files | Files in the target folder get encrypted with .encrypted extension |
+| Decrypted Files | EXE decryptor restores original file contents from encrypted files |
+| Deleted Originals | Like Android, original files are removed post-encryption |
+| Console Output (Optional) | If enabled, success/failure messages shown via command-line or pop-up logs |
+
