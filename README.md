@@ -441,27 +441,7 @@ This module demonstrates:
 - The concept of file scanning and targeted decryption within app directories.
 - Simulates real-world decryption tools disguised as helpful utilities.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Deployment (Final Phase) – Simple & Detailed
+  # Deployment (Final Phase) – Simple & Detailed
 
 ## Objective:
 To organize and deploy all 4 components of the ransomware project effectively across both Android and Windows platforms, making it easy to execute, disguise, share, and manage.
@@ -531,64 +511,6 @@ Each target file is encrypted:
 - Original file is deleted.
 - Output files are saved with `.encrypted` extension.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 ### Deployment Steps:
 Compiled into EXE using:
 ```bash
@@ -735,3 +657,20 @@ This module helps in understanding:
 - How ransomware targets sensitive folders like WhatsApp.
 - How AES-256 CBC works with key + IV combo.
 - The impact of granting full storage permission to unknown apps.
+
+# Requirements for Ransomware Simulation Project (Spotify + CapCut Encryptor/Decryptor)
+
+| Name | Version / Toolchain | Description |
+|------|----------------------|-------------|
+| Flutter SDK | >= 3.10.0 | Used for developing cross-platform Android apps (Spotify Encryptor/Decryptor) |
+| Dart | >= 2.18.0 | Language used in Flutter for implementing encryption logic |
+| Visual Studio Code | Latest | IDE used for writing and debugging Flutter/Dart code |
+| Android SDK | >= 31 (Android 12+) | Required to build and run Android APKs (targeting WhatsApp profile photos) |
+| Windows (EXE) | Windows 10/11 | Target platform for CapCut.exe ransomware simulator |
+| Python | >= 3.10.0 (optional) | Used in some utilities (e.g., key generation or automation scripts) |
+| pyinstaller | >= 5.9.0 | For converting Python scripts into CapCut.exe binary |
+| AES Encryption | AES-256 CBC Mode | Core algorithm used for encrypting/decrypting files in both platforms |
+| Shared Password | "FaizShiv200@123" | Common key used for encryption/decryption across platforms |
+| File Targeting | Android: /Pictures/Digital-Promotion-Agency.png <br> Windows:C:\Important_File | Target files/folders for encryption |
+| Permissions | MANAGE_EXTERNAL_STORAGE | Required in Android for accessing WhatsApp profile photos |
+| Icons & UI | Fake App Icons (Spotify, CapCut) | Used to disguise the ransomware as real apps |
