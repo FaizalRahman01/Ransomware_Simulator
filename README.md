@@ -92,7 +92,7 @@ encrypted_data = iv + cipher.encrypt(padded_data)
 The encrypted file is saved as:
 ```
 The encrypted file is saved as:
-### ✅ Step 4: Handle Files and Folders
+###  Step 4: Handle Files and Folders
 
 The program checks if the given path is a file or folder:
 
@@ -113,7 +113,7 @@ The input is: C:\Important_File\photo.jpg
 Output after encryption: C:\Important_File\photo.jpg.encrypted\n  
 
 **The original photo.jpg is deleted.**  
-### 📦 Convert to .exe using PyInstaller
+###  Convert to .exe using PyInstaller
 
 To turn the script into an .exe named **CapCut.exe**:  
 **pyinstaller --onefile --noconsole encryptor.py -n CapCut.exe**  
@@ -124,12 +124,19 @@ To turn the script into an .exe named **CapCut.exe**:
 
 ---
 
-### 📌 Educational Purpose
+###  Educational Purpose
 
-⚠ This encryptor is strictly for educational use in a controlled environment to understand how ransomware works.
+ This encryptor is strictly for educational use in a controlled environment to understand how ransomware works.
 
 - Demonstrates encryption workflow using AES.
 - Shows how files can be programmatically locked and disguised.
 - Useful for learning cybersecurity defense techniques.
+### Important Notes
+
+This script does not include a decryptor.
+
+Encrypted files cannot be opened without the key.
+
+IV is stored inside the encrypted file itself (at the beginning).
 
 
