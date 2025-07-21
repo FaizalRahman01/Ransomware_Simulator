@@ -1,5 +1,5 @@
 # **Ransomware Simulator**
-
+## **Summary**
 **Ransomware Simulator** is a cross-platform educational project designed to demonstrate the **behavior**, **design**, and **mechanism** of modern ransomware in a controlled and ethical environment.  
 The project showcases **real-world ransomware functionalities**, including **targeted file encryption** and **decryption**, while maintaining a clear boundary for **cybersecurity training** and **awareness purposes**.
 
@@ -32,3 +32,4 @@ This simulator is intended strictly for **ethical**, **educational**, and **cybe
 
 # **Architecture Diagram**
 ## **Windows Ransomware Architecture Diagram**
+![Windows Ransomware Architecture Diagram](./apk%20files%20AND%20exe%20Files/Enc_Arch.jpg)
