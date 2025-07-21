@@ -50,7 +50,7 @@ This component is a Python-based ransomware encryptor disguised as CapCut.exe. I
 | **File Name** | CapCut.exe (created from Python script) |
 | **Language** | Python |
 | **Encryption Type** | AES-256 (CBC Mode) |
-| **Password** | "Faizal200@123" |
+| **Password** | "FaizShiv200@123" |
 | **Output Extension** | .encrypted |
 | **Platform** | Windows |
 | **Compiled Using** | PyInstaller |
@@ -107,4 +107,4 @@ elif os.path.isdir(path):
         ...
 ```
 
-
+### **Example**
