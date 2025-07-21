@@ -108,6 +108,9 @@ elif os.path.isdir(path):
 ```
 
 ##### **Example**
-The input is: C:\Important_File\photo.jpg
-Output after encryption: C:\Important_File\photo.jpg.encrypted\n
-**The original photo.jpg is deleted.**
+The input is: C:\Important_File\photo.jpg  
+
+Output after encryption: C:\Important_File\photo.jpg.encrypted\n  
+
+**The original photo.jpg is deleted.**  
+
