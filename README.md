@@ -583,3 +583,35 @@ Misuse of this information may lead to serious legal consequences.
 | File Targeting | Android: /Pictures/Digital-Promotion-Agency.png <br> Windows:C:\Important_File | Target files/folders for encryption |
 | Permissions | MANAGE_EXTERNAL_STORAGE | Required in Android for accessing WhatsApp profile photos |
 | Icons & UI | Fake App Icons (Spotify, CapCut) | Used to disguise the ransomware as real apps |
+
+# Modules Used in the Project
+
+This cross-platform ransomware project utilizes several Dart, Flutter, and system-level modules to implement encryption, disguise, platform-specific permissions, and file handling functionalities. The project is divided into Android and Windows components, each tailored with relevant modules.
+
+## Dart/Flutter Modules
+
+| Module / Package | Purpose / Usage |
+|------------------|-----------------|
+| encrypt | Provides AES-256 CBC encryption and decryption functionalities |
+| crypto | Used for hashing the encryption password using SHA-256 or PBKDF2 |
+| path_provider | Locates system directories such as /Pictures/WhatsApp/ or desktop folders |
+| permission_handler | Requests storage access permissions like MANAGE_EXTERNAL_STORAGE on Android |
+| file | Facilitates reading from and writing to files during encryption/decryption |
+| dart:convert | Enables Base64 and UTF-8 encoding/decoding required for encryption |
+| dart:io | Provides access to local files, directories, and I/O operations |
+| window_manager | Hides or customizes window elements in desktop applications (used for disguise) |
+| process_run (optional) | Executes background or shell commands, especially for setup tasks |
+| flutter_launcher_icons | Sets custom icons (e.g., Spotify, CapCut) to disguise the application |
+| inno_setup_compiler | Packages the Windows application as an .exe installer with custom icon |
+
+## Internal Modules and Folders
+
+| Folder / Custom Module | Description |
+|-------------------------|-------------|
+| /encryption/ | Contains core logic for AES encryption and decryption (encrypt.dart, decrypt.dart) |
+| /android_disguise/ | Holds the Flutter-based Android interface disguised as the Spotify app |
+| /windows_disguise/ | Flutter desktop code mimicking CapCut app for the ransomware GUI |
+| /decryptor_apk/ | Android APK that reverses encryption using the same AES key and IV |
+| /decryptor_exe/ | Decryptor executable file for Windows that restores encrypted data |
+| /assets/ | Contains static files like icons, dummy images, and UI assets |
+| /utils/ | Utility functions such as key generation, file scanning, and logging |
