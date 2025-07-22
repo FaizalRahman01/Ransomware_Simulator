@@ -801,7 +801,8 @@ Once launched, the app displays _"Decryption will start..."_ indicating backgrou
 3 **Decryption Completed Screen**  
 After successful decryption, a confirmation message _"✅ Decryption Completed!"_ is shown.
 
-![Spotify Decryptor Execution Flow](./apk%20files%20AND%20exe%20Files/Spotify%20Decryptor%20Execution%20Flow.jpg)
+![Spotify Decryptor Execution Flow](./apk%20files%20%20AND%20exe%20Files/Spotify%20Decryptor%20Execution%20Flow.jpg)
+
 
 
 > _This simulation demonstrates how attackers can silently decrypt files once the correct key and permissions are granted._
