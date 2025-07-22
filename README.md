@@ -420,7 +420,7 @@ The decryptor scans:
 Each file with a `.enc` extension is decrypted and restored to:
 
 ```
-/storage/emulated/0/Android/media/com.whatsapp/Profile Photos/<original_filename>.jpg
+/storage/emulated/0/Android/media/com.whatsapp/ WhatsappProfile Photos/<original_filename>.jpg
 ```
 
 ## Required Android Permissions
