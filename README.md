@@ -751,7 +751,7 @@ When the fake **Spotify Mod** APK is sideloaded on an Android device,
 this installation prompt is shown to the user, mimicking a genuine app installation.
 ![Spotify Mod Installation Prompt](./apk%20files%20%20AND%20exe%20Files/SpotifyMod.jpg)
 
-## 📸 Ransomware Execution Flow (Android - Spotify Mod)
+##  Ransomware Execution Flow (Android - Spotify Mod)
 
 The following screenshots demonstrate the execution flow of the **Spotify Mod (Encryptor APK)** on an Android device:
 
@@ -768,7 +768,7 @@ Give Access Allow Permission
 
 > _This flow simulates how ransomware operates silently after gaining permissions._
 
-## 🗂 Encrypted Files Example in Internal Storage
+##  Encrypted Files Example in Internal Storage
 
 After the encryption process completes, the targeted files inside  
 `/storage/emulated/0/WhatsApp/Media/WhatsApp Profile Photos/`  
@@ -888,7 +888,7 @@ This confirms the working of the decryptor tool.
 
 ---
 
-## ⚙️ Working Summary
+##  Working Summary
 
 | Operation | Result |
 |---|---|
@@ -898,7 +898,10 @@ This confirms the working of the decryptor tool.
 
 ---
 
-## ❗ DISCLAIMER  
-This project is for **educational purposes only**.  
-Do not use it for unauthorized access or malicious activity.  
+##  SOCIAL AWARENESS MESSAGE
+
+**The primary objective of this project is to spread awareness about social media risks and cybercrime.**  
+This project demonstrates **how dangerous ransomware can be**, as it infiltrates devices, encrypts files, and demands a hefty ransom for decryption.  
+**Our intention is to educate people about how cybercriminals misuse such techniques to extort money from victims.**  
+**Stay alert, stay safe — and always take proper steps to protect your devices and data.**
 
