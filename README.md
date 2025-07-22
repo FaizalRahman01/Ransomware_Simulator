@@ -855,8 +855,9 @@ This confirms the working of the decryptor tool.
 
 ---
 
-### 2️⃣ Downloaded ZIP & Extracted `.exe` File  
+### Downloaded ZIP & Extracted `.exe` File  
 ![Running the EXE](./apk%20files%20%20AND%20exe%20Files/Running%20the%20EXE%20%20.png)
+
 
 
 ---
