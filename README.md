@@ -843,7 +843,7 @@ This confirms the working of the decryptor tool.
 | Tool | Download Link |
 |---|---|
 | 🔒 **CapCut Ransomware (Encryptor)** | [Download CapCut.zip](https://drive.google.com/file/d/1ttsT83lxNLEGj0K17n89GG1gEwUsDSG9/view?usp=sharing) |
-| 🔓 **CapCut Decryptor** | _(Provide the decryptor link here)_ |
+| 🔓 **CapCut Decryptor** | [Decoder.zip](https://drive.google.com/file/d/1BfBja7iJMMrR5MB-TqhhJJhEfQH1Mt4D/view?usp=sharing)
 
 ---
 
