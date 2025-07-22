@@ -783,7 +783,7 @@ appear like this in the file manager:
 
 When the user tries to install the **Spotify Decryptor APK** (Disguised Decryption Tool), the following installation prompt appears:
 
-![Spotify Decryptor Installation Prompt](./apk_files_and_exe_files/SpotifyDecryptor.jpg)
+![Spotify Decryptor Installation Prompt](./apk%20files%20AND%20exe%20Files/Spotify%20Decryptor%20Installation%20Prompt.jpg)
 
 🔓 This APK is disguised as a file recovery tool but actually decrypts files encrypted by the ransomware.
 
