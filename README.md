@@ -759,7 +759,7 @@ Once permissions are granted, the encryption process begins automatically with a
 
  **Encryption Completed Confirmation**  
 Upon successful encryption of target files, the app displays a completion message.
-
+Give Access Allow Permission
 ![Ransomware Execution Flow](./apk%20files%20%20AND%20exe%20Files/RansomwareExecutionFlow.jpg)
 
 > _This flow simulates how ransomware operates silently after gaining permissions._
@@ -779,3 +779,42 @@ appear like this in the file manager:
 - Encryption timestamp matches execution time
 
 > _This demonstrates how the ransomware successfully encrypts sensitive files in target directories._
+## 📱 Spotify Decryptor Installation Prompt
+
+When the user tries to install the **Spotify Decryptor APK** (Disguised Decryption Tool), the following installation prompt appears:
+
+![Spotify Decryptor Installation Prompt](./apk_files_and_exe_files/SpotifyDecryptor.jpg)
+
+🔓 This APK is disguised as a file recovery tool but actually decrypts files encrypted by the ransomware.
+
+> _The installation prompt mimics legitimate app installations to avoid suspicion._
+## 🛠️ Spotify Decryptor Permission and Decryption Flow
+
+Below is the flow of **Spotify Decryptor APK** execution after installation:
+
+ **Permission Grant Screen**  
+The app requests **Manage All Files Access** permission to access storage for decryption.
+
+ **Decryption Progress Screen**  
+Once launched, the app displays _"Decryption will start..."_ indicating background decryption process.
+
+3 **Decryption Completed Screen**  
+After successful decryption, a confirmation message _"✅ Decryption Completed!"_ is shown.
+
+![Spotify Decryptor Execution Flow](./apk%20files%20AND%20exe%20Files/Spotify%20Decryptor%20Execution%20Flow.jpg)
+
+
+> _This simulation demonstrates how attackers can silently decrypt files once the correct key and permissions are granted._
+##  Post-Decryption File View (Restored WhatsApp Profile Photos)
+
+After the **Spotify Decryptor APK** successfully completes decryption, the previously encrypted files are restored back to their original readable format with their original file extensions (e.g., `.jpg`, `.pdf`, `.mp3`).  
+This confirms the working of the decryptor tool.
+
+ **Restored Files Location:**
+```
+/storage/emulated/0/Android/media/com.whatsapp/Profile Photos/
+```
+
+ Screenshot:  
+![Post-Decryption Files](./apk%20files%20AND%20exe%20Files/Post-Decryption%20Files.jpg)
+> _This showcases the successful recovery of encrypted files by the decryptor module._
