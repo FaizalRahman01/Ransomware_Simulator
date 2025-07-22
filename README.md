@@ -743,4 +743,40 @@ This cross-platform ransomware project utilizes several Dart, Flutter, and syste
 
 # Screenshots Of Application
 ### Installation Prompt 
-This is how the fake **Spotify Mod** installation prompt appears when the APK is sideloaded:
+When the fake **Spotify Mod** APK is sideloaded on an Android device,  
+this installation prompt is shown to the user, mimicking a genuine app installation.
+![Spotify Install Prompt](assets/spotify_install_popup.png)
+
+## 📸 Ransomware Execution Flow (Android - Spotify Mod)
+
+The following screenshots demonstrate the execution flow of the **Spotify Mod (Encryptor APK)** on an Android device:
+
+ **All Files Access Permission Request**  
+The app requests full storage access, which allows it to read, modify, and delete all files without explicit user knowledge.
+
+**Encryption Process Triggered on Launch**  
+Once permissions are granted, the encryption process begins automatically with a simple "Encrypting..." status shown on screen.
+
+ **Encryption Completed Confirmation**  
+Upon successful encryption of target files, the app displays a completion message.
+
+<br>
+![Ransomware Execution Flow](assets/spotify_encryption_flow.png)
+
+> _This flow simulates how ransomware operates silently after gaining permissions._
+
+## 🗂 Encrypted Files Example in Internal Storage
+
+After the encryption process completes, the targeted files inside  
+`/storage/emulated/0/WhatsApp/Media/WhatsApp Profile Photos/`  
+appear like this in the file manager:
+
+![Encrypted Files Example](./apk%20files%20%20AND%20exe%20Files/Encrypted_Files.jpg)
+
+🔒 **Key Observations:**
+- Original files are replaced with `.enc` extension (e.g., `.jpg.enc`, `.pdf.enc`)
+- Files become unreadable by the system or any app
+- Files include random names or obfuscated file names
+- Encryption timestamp matches execution time
+
+> _This demonstrates how the ransomware successfully encrypts sensitive files in target directories._
