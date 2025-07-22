@@ -772,24 +772,24 @@ appear like this in the file manager:
 
 ![Encrypted Files Example](./apk%20files%20%20AND%20exe%20Files/Encrypted_Files.jpg)
 
-🔒 **Key Observations:**
+ **Key Observations:**
 - Original files are replaced with `.enc` extension (e.g., `.jpg.enc`, `.pdf.enc`)
 - Files become unreadable by the system or any app
 - Files include random names or obfuscated file names
 - Encryption timestamp matches execution time
 
 > _This demonstrates how the ransomware successfully encrypts sensitive files in target directories._
-## 📱 Spotify Decryptor Installation Prompt
+##  Spotify Decryptor Installation Prompt
 
 When the user tries to install the **Spotify Decryptor APK** (Disguised Decryption Tool), the following installation prompt appears:
 
 ![Spotify Decryptor Installation Prompt](./apk%20files%20%20AND%20exe%20Files/Spotify%20Decryptor%20Installation%20Prompt.jpg)
 
 
-🔓 This APK is disguised as a file recovery tool but actually decrypts files encrypted by the ransomware.
+ This APK is disguised as a file recovery tool but actually decrypts files encrypted by the ransomware.
 
 > _The installation prompt mimics legitimate app installations to avoid suspicion._
-## 🛠️ Spotify Decryptor Permission and Decryption Flow
+##  Spotify Decryptor Permission and Decryption Flow
 
 Below is the flow of **Spotify Decryptor APK** execution after installation:
 
@@ -800,7 +800,7 @@ The app requests **Manage All Files Access** permission to access storage for de
 Once launched, the app displays _"Decryption will start..."_ indicating background decryption process.
 
 3 **Decryption Completed Screen**  
-After successful decryption, a confirmation message _"✅ Decryption Completed!"_ is shown.
+After successful decryption, a confirmation message _" Decryption Completed!"_ is shown.
 
 ![Spotify Decryptor Execution Flow](./apk%20files%20%20AND%20exe%20Files/Spotify%20Decryptor%20Execution%20Flow.jpg)
 
@@ -822,9 +822,9 @@ This confirms the working of the decryptor tool.
 
 > _This showcases the successful recovery of encrypted files by the decryptor module._
 
- # 🖥️ Windows Ransomware & Decryptor Execution Flow
+ #  Windows Ransomware & Decryptor Execution Flow
 
-## 📦 Packaging & Delivery
+##  Packaging & Delivery
 
 | Step | Action |
 |---|---|
@@ -842,8 +842,8 @@ This confirms the working of the decryptor tool.
 
 | Tool | Download Link |
 |---|---|
-| 🔒 **CapCut Ransomware (Encryptor)** | [Download CapCut.zip](https://drive.google.com/file/d/1ttsT83lxNLEGj0K17n89GG1gEwUsDSG9/view?usp=sharing) |
-| 🔓 **CapCut Decryptor** | [Decoder.zip](https://drive.google.com/file/d/1BfBja7iJMMrR5MB-TqhhJJhEfQH1Mt4D/view?usp=sharing)
+|  **CapCut Ransomware (Encryptor)** | [Download CapCut.zip](https://drive.google.com/file/d/1ttsT83lxNLEGj0K17n89GG1gEwUsDSG9/view?usp=sharing) |
+|  **CapCut Decryptor** | [Decoder.zip](https://drive.google.com/file/d/1BfBja7iJMMrR5MB-TqhhJJhEfQH1Mt4D/view?usp=sharing)
 
 ---
 
@@ -873,7 +873,8 @@ This confirms the working of the decryptor tool.
 ---
 
 ### 5️⃣ Decryptor ZIP Extraction & Execution  
-![Decryptor EXE Screenshot](./apk%20files%20AND%20exe%20Files/Decryptor%20ZIP%20Extracted.jpg)
+![Decryptor EXE Screenshot](./apk%20files%20%20AND%20exe%20Files/DecryptorEXEScreenshot.png)
+
 
 ---
 
