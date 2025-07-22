@@ -862,8 +862,8 @@ This confirms the working of the decryptor tool.
 
 ---
 
-### 3️⃣ Running the EXE (Permission Prompt Example)  
-![SmartScreen Prompt Screenshot](./apk%20files%20AND%20exe%20Files/Permission%20Prompt.jpg)
+### Running the EXE (Permission Prompt Example)  
+![SmartScreen Prompt](./apk%20files%20%20AND%20exe%20Files/SmartScreenPromptScreenshot.png)
 
 ---
 
