@@ -745,7 +745,7 @@ This cross-platform ransomware project utilizes several Dart, Flutter, and syste
 ### Installation Prompt 
 When the fake **Spotify Mod** APK is sideloaded on an Android device,  
 this installation prompt is shown to the user, mimicking a genuine app installation.
-![Spotify Install Prompt](assets/spotify_install_popup.png)
+![Spotify Mod Installation Prompt](./apk%20files%20%20AND%20exe%20Files/SpotifyMod.jpg)
 
 ## 📸 Ransomware Execution Flow (Android - Spotify Mod)
 
@@ -760,8 +760,7 @@ Once permissions are granted, the encryption process begins automatically with a
  **Encryption Completed Confirmation**  
 Upon successful encryption of target files, the app displays a completion message.
 
-<br>
-![Ransomware Execution Flow](./apk%20files%20%20AND%20exe%20File/RansomwareExecutionFlow.jpg)
+![Ransomware Execution Flow](./apk%20files%20%20AND%20exe%20Files/RansomwareExecutionFlow.jpg)
 
 > _This flow simulates how ransomware operates silently after gaining permissions._
 
