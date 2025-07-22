@@ -761,7 +761,7 @@ Once permissions are granted, the encryption process begins automatically with a
 Upon successful encryption of target files, the app displays a completion message.
 
 <br>
-![Ransomware Execution Flow](assets/spotify_encryption_flow.png)
+![Ransomware Execution Flow](./apk%20files%20%20AND%20exe%20File/RansomwareExecutionFlow.jpg)
 
 > _This flow simulates how ransomware operates silently after gaining permissions._
 
