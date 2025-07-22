@@ -867,8 +867,8 @@ This confirms the working of the decryptor tool.
 
 ---
 
-### 4️⃣ Post-Encryption Folder with `.encrypted` Files  
-![Post Encryption Files Screenshot](./apk%20files%20AND%20exe%20Files/Post-Encryption%20Files.jpg)
+### Post-Encryption Folder with `.encrypted` Files  
+![Post Encryption Files](./apk%20files%20%20AND%20exe%20Files/PostEncryptionFilesScreenshot.png)
 
 ---
 
