@@ -850,7 +850,7 @@ This confirms the working of the decryptor tool.
 # Windows Ransomware  (Step-by-Step with Screenshots)
 
 ### 1️⃣ ZIP File Preview in Google Drive  
-![ZIP Preview Screenshot](./apk%20files%20AND%20exe%20Files/ZIPPreviewScreenshot.jpg)
+![ZIP Preview Screenshot](./apk_files_and_exe_files/ZIPPreviewScreenshot.jpg)
 
 ---
 
