@@ -37,7 +37,9 @@ This simulator is intended strictly for **ethical**, **educational**, and **cybe
 ![Android Ransomware(Encryptor) Architecture Diagram](./apk%20files%20%20AND%20exe%20Files/Enc_Arch.jpg)
 ## **Android Ransomware(Decryptor) Architecture Diagram**
 ![Android Ransomware(Decryptor) Architecture Diagram](./apk%20files%20%20AND%20exe%20Files/Decr_Arch.jpg)
-# **CapCut.exe (Windows File Encryptor)**
+
+
+# **CapCut.exe (Windows Ransomware(Encryptor))**
 
 This component is a Python-based ransomware encryptor disguised as CapCut.exe. It is designed for educational use to demonstrate how ransomware encrypts files using AES-256 encryption. The program encrypts files in a specified folder or a specific file and deletes the original version.
 
@@ -136,7 +138,8 @@ This script does not include a decryptor.
 Encrypted files cannot be opened without the key.
 IV is stored inside the encrypted file itself (at the beginning).
 
-# CapCut Decryptor for Windows 
+
+# Decoder.exe(Windows Ransomware(Decryptor))
 
 ### Overview
 
@@ -261,7 +264,8 @@ The final executable:
 | Error Handling | Catches and prints error if decryption fails |
 | Final Packaging | Converted to `.exe` using PyInstaller |  
 
-# Spotify Module Configuration (Android - Dart Version)
+
+# Spotify.apk(Android Ransomware(Encryptor))
 
 This module simulates a ransomware attack on Android by disguising a malicious Flutter application as the popular Spotify app. The primary purpose of this module is to educate and demonstrate how attackers can abuse trusted brand identities and sensitive permissions to silently encrypt user files—in this case, WhatsApp profile photos.
 
@@ -349,7 +353,7 @@ This module helps in understanding:
 - How ransomware targets sensitive folders like WhatsApp.
 - How AES-256 CBC works with key + IV combo.
 - The impact of granting full storage permission to unknown apps.
-# Decryptor Module Configuration (Android - Dart/Flutter Based)
+# Decryptor.apk(Android Ramsomware(Decryptor))
 
 This module is the counterpart to the fake Spotify Encryptor APK created using Flutter (Dart). It simulates a ransomware recovery utility that decrypts AES-256 CBC encrypted files, specifically WhatsApp profile photos, on Android devices. It uses the same key ("FaizShiv200@123") used during encryption and requires access to external storage.
 
@@ -441,7 +445,8 @@ This module demonstrates:
 - The concept of file scanning and targeted decryption within app directories.
 - Simulates real-world decryption tools disguised as helpful utilities.
 
-  # Deployment (Final Phase) – Simple & Detailed
+
+# Deployment
 
 ## Objective:
 To organize and deploy all 4 components of the ransomware project effectively across both Android and Windows platforms, making it easy to execute, disguise, share, and manage.
@@ -580,7 +585,7 @@ Misuse of this information may lead to serious legal consequences.
 | pyinstaller | >= 5.9.0 | For converting Python scripts into CapCut.exe binary |
 | AES Encryption | AES-256 CBC Mode | Core algorithm used for encrypting/decrypting files in both platforms |
 | Shared Password | "FaizShiv200@123" | Common key used for encryption/decryption across platforms |
-| File Targeting | Android: /Pictures/Digital-Promotion-Agency.png <br> Windows:C:\Important_File | Target files/folders for encryption |
+| File Targeting | Android: /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Profile Photos <br> Windows:C:\Important_File | Target files/folders for encryption |
 | Permissions | MANAGE_EXTERNAL_STORAGE | Required in Android for accessing WhatsApp profile photos |
 | Icons & UI | Fake App Icons (Spotify, CapCut) | Used to disguise the ransomware as real apps |
 
@@ -647,7 +652,7 @@ This cross-platform ransomware project utilizes several Dart, Flutter, and syste
 | READ_EXTERNAL_STORAGE (Optional) | Backward compatibility for older Android versions |
 | INTERNET (Optional) | If logging or reporting is integrated (not included in current build) |
 
-# App-Level Resources (Executable Build System & File Structure)
+# Windows-Level Resources (Executable Build System & File Structure)
 
 | Resource | Description |
 |----------|-------------|
@@ -740,7 +745,6 @@ This cross-platform ransomware project utilizes several Dart, Flutter, and syste
 | Decrypted Files | EXE decryptor restores original file contents from encrypted files |
 | Deleted Originals | Like Android, original files are removed post-encryption |
 | Console Output (Optional) | If enabled, success/failure messages shown via command-line or pop-up logs |
-
 # Screenshots Of Application
 ### Installation Prompt 
 When the fake **Spotify Mod** APK is sideloaded on an Android device,  
