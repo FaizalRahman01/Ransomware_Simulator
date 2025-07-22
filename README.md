@@ -898,7 +898,7 @@ This confirms the working of the decryptor tool.
 
 ---
 
-##  SOCIAL AWARENESS MESSAGE
+<h2 style="color:red;">⚠ SOCIAL AWARENESS MESSAGE</h2>
 
 **The primary objective of this project is to spread awareness about social media risks and cybercrime.**  
 This project demonstrates **how dangerous ransomware can be**, as it infiltrates devices, encrypts files, and demands a hefty ransom for decryption.  
