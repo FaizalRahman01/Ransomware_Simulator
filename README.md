@@ -741,3 +741,6 @@ This cross-platform ransomware project utilizes several Dart, Flutter, and syste
 | Deleted Originals | Like Android, original files are removed post-encryption |
 | Console Output (Optional) | If enabled, success/failure messages shown via command-line or pop-up logs |
 
+# Screenshots Of Application
+### Installation Prompt 
+This is how the fake **Spotify Mod** installation prompt appears when the APK is sideloaded:
