@@ -872,14 +872,15 @@ This confirms the working of the decryptor tool.
 
 ---
 
-### 5️⃣ Decryptor ZIP Extraction & Execution  
+### Decryptor ZIP Extraction & Execution  
 ![Decryptor EXE Screenshot](./apk%20files%20%20AND%20exe%20Files/DecryptorEXEScreenshot.png)
 
 
 ---
 
-### 6️⃣ Post-Decryption Folder with Restored Files  
-![Post Decryption Files Screenshot](./apk%20files%20AND%20exe%20Files/Post-Decryption%20Files.jpg)
+###  Post-Decryption Folder with Restored Files  
+![Decryptor EXE Screenshot](./apk%20files%20%20AND%20exe%20Files/Decryptor%20EXE%20Screenshot.png)
+
 
 ---
 
